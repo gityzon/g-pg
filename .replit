@@ -1,0 +1,5 @@
+run = "sh main.sh"
+
+
+[env]
+PGDATA = "/home/runner/${REPL_SLUG}/data"
