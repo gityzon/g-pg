@@ -61,7 +61,7 @@ listen_addresses = '127.0.0.1'		# what IP address(es) to listen on;
 					# defaults to 'localhost'; use '*' for all
 					# (change requires restart)
 port = 5432				# (change requires restart)
-#max_connections = 100			# (change requires restart)
+max_connections = 20			# (change requires restart)
 #superuser_reserved_connections = 3	# (change requires restart)
 unix_socket_directories = 'replace_unix_dir'	# comma-separated list of directories
 					# (change requires restart)
@@ -114,7 +114,7 @@ unix_socket_directories = 'replace_unix_dir'	# comma-separated list of directori
 
 # - Memory -
 
-#shared_buffers = 32MB			# min 128kB
+shared_buffers = 384MB			# min 128kB
 					# (change requires restart)
 #huge_pages = try			# on, off, or try
 					# (change requires restart)
@@ -123,8 +123,8 @@ unix_socket_directories = 'replace_unix_dir'	# comma-separated list of directori
 					# (change requires restart)
 # Caution: it is not advisable to set max_prepared_transactions nonzero unless
 # you actively intend to use prepared transactions.
-#work_mem = 4MB				# min 64kB
-#maintenance_work_mem = 64MB		# min 1MB
+work_mem = 307MB				# min 64kB
+#maintenance_work_mem = 77MB		# min 1MB
 #autovacuum_work_mem = -1		# min 1MB, or -1 to use maintenance_work_mem
 #max_stack_depth = 2MB			# min 100kB
 #dynamic_shared_memory_type = posix	# the default is the first option
@@ -163,12 +163,12 @@ unix_socket_directories = 'replace_unix_dir'	# comma-separated list of directori
 
 # - Asynchronous Behavior -
 
-#effective_io_concurrency = 1		# 1-1000; 0 disables prefetching
-#max_worker_processes = 8		# (change requires restart)
+effective_io_concurrency = 200		# 1-1000; 0 disables prefetching
+max_worker_processes = 8		# (change requires restart)
 #max_parallel_maintenance_workers = 2	# taken from max_parallel_workers
-#max_parallel_workers_per_gather = 2	# taken from max_parallel_workers
+max_parallel_workers_per_gather = 2	# taken from max_parallel_workers
 #parallel_leader_participation = on
-#max_parallel_workers = 8		# maximum number of max_worker_processes that
+max_parallel_workers = 2		# maximum number of max_worker_processes that
 					# can be used in parallel operations
 #old_snapshot_threshold = -1		# 1min-60d; -1 disables; 0 is immediate
 					# (change requires restart)
@@ -199,7 +199,7 @@ unix_socket_directories = 'replace_unix_dir'	# comma-separated list of directori
 #wal_compression = off			# enable compression of full-page writes
 #wal_log_hints = off			# also do full page writes of non-critical updates
 					# (change requires restart)
-#wal_buffers = -1			# min 32kB, -1 sets based on shared_buffers
+wal_buffers = -1			# min 32kB, -1 sets based on shared_buffers
 					# (change requires restart)
 #wal_writer_delay = 200ms		# 1-10000 milliseconds
 #wal_writer_flush_after = 1MB		# measured in pages, 0 disables
@@ -210,9 +210,9 @@ unix_socket_directories = 'replace_unix_dir'	# comma-separated list of directori
 # - Checkpoints -
 
 #checkpoint_timeout = 5min		# range 30s-1d
-#max_wal_size = 1GB
-#min_wal_size = 80MB
-#checkpoint_completion_target = 0.5	# checkpoint target duration, 0.0 - 1.0
+max_wal_size = 3GB
+min_wal_size = 1GB
+checkpoint_completion_target = 0.9	# checkpoint target duration, 0.0 - 1.0
 #checkpoint_flush_after = 0		# measured in pages, 0 disables
 #checkpoint_warning = 30s		# 0 disables
 
@@ -313,7 +313,7 @@ unix_socket_directories = 'replace_unix_dir'	# comma-separated list of directori
 # - Planner Cost Constants -
 
 #seq_page_cost = 1.0			# measured on an arbitrary scale
-#random_page_cost = 4.0			# same scale as above
+random_page_cost = 1.1			# same scale as above
 #cpu_tuple_cost = 0.01			# same scale as above
 #cpu_index_tuple_cost = 0.005		# same scale as above
 #cpu_operator_cost = 0.0025		# same scale as above
@@ -331,7 +331,7 @@ unix_socket_directories = 'replace_unix_dir'	# comma-separated list of directori
 
 #min_parallel_table_scan_size = 8MB
 #min_parallel_index_scan_size = 512kB
-#effective_cache_size = 4GB
+effective_cache_size = 1GB
 
 # - Genetic Query Optimizer -
 
