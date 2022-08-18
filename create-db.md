@@ -1,4 +1,6 @@
-### 在Shell界面依次执行以下命令
+### 在Shell界面依次执行以下操作
+
+按下enter，"Detected change in environment, reloading shell..."后逐行运行以下命令
 
 createdb -h 127.0.0.1
 psql -h 127.0.0.1
