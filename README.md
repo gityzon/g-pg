@@ -1,28 +1,20 @@
-# g-pg
+# sh-shiori
 
-Run gitea with postgresql on replit
+Run shiori on replit
 
 #### APP:
 
-[Gitea](https://github.com/go-gitea/gitea)：Git with a cup of tea, painless self-hosted git service
-
-### Packages:
-
-1. ​    pkgs.less
-2. ​    pkgs.postgresql_14
-3. ​    pkgs.bashInteractive
+[shiori](https://github.com/go-shiori/shiori)：Simple bookmark manager built with Go
 
 ### Feature:
 
-Nginx(v1.20.2) as frontend with full configured.
-
-Local PostgreSQL_v14 as high-performance database.
+Easy to use
 
 ### Deploy:
 
-   Choose "Import from GitHub".
+Choose "Import from GitHub".
 
-<a href="https://replit.com/github/gityzon/g-pg">
+<a href="https://replit.com/github/gityzon/sh-shiori-1.5.2">
   <img alt="Run on Repl.it" src="https://replit.com/badge/github/github/gityzon" style="height: 40px; width: 190px;" />
 </a>
 
@@ -31,15 +23,14 @@ If you use mobile phone,please set the UA of Browser as "Desktop" or maybe repli
 ### For edu:
 
 1. Creat a Bash-language project.
-
+  
 2. Copy these code to Replit's Shell and ←
-
-   `git clone https://github.com/gityzon/g-pg && mv -b g-pg/* ./ && mv -b g-pg/.[^.]* ./ && rm -rf *~ && rm -rf g-pg`
-
+  
+  `git clone https://github.com/gityzon/sh-shiori-1.5.sh-shiori-1.5.2 mv sh-shiori-1.5.2-pg/* ./ && mv -b sh-shiori-1.5.2/sh-shiori-1.5.2]* ./ && rm -rf *~sh-shiori-1.5.2rm -rf sh-shiori-1.5.2`
+  
 3. After "Loading Nix environment..." is done, ▶RUN!!!
+  
 
 ## Warn:
 
 Please read "main.sh" for managing your site.
-
-
